@@ -1,5 +1,6 @@
 ultralytics
 opencv-python
+opencv-contrib-python 
 pygame
 --index-url https://download.pytorch.org/whl/cu121
 torch

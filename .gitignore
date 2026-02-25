@@ -36,6 +36,7 @@ DS/
 datasets/
 runs/
 */runs/
+!weights/
 
 # Ultralytics cache
 *.cache
@@ -46,14 +47,6 @@ runs/
 # =========================
 test_imgs/
 test_video/
-
-# Common image formats
-*.jpg
-*.jpeg
-*.png
-*.bmp
-*.tif
-*.tiff
 
 # Common video formats
 *.mp4

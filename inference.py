@@ -158,8 +158,17 @@ def overlay(frame, state: FrameState):
         f"heads={len(state.heads)} helmets={len(state.helmets)} no_helmet={len(state.no_helmet_heads)}",
         (10, 30),
         cv2.FONT_HERSHEY_SIMPLEX,
-        0.9,
+        0.6,
         (0, 255, 0),
+        2,
+    )   
+    cv2.putText(
+        vis,
+        f"ESC to quit",
+        (470, 30),
+        cv2.FONT_HERSHEY_SIMPLEX,
+        0.8,
+        (0, 0, 0),
         2,
     )
     return vis
@@ -173,7 +182,7 @@ def main():
     ap.add_argument("--output", default=None, help="Output video path (mode=video). If omitted: <input>_annotated.mp4")
 
     ap.add_argument("--webcam", type=int, default=0, help="Webcam id (mode=stream)")
-    ap.add_argument("--model", default=r"DS\runs\train\helmet_yolo26s_exp3_1280\weights\best.pt")
+    ap.add_argument("--model", default=r"model\\weights\\best.pt")
 
     ap.add_argument("--imgsz", type=int, default=960, help="YOLO inference resolution (imgsz)")
     ap.add_argument("--device", default="0", help="'0' for GPU0 or 'cpu'")
