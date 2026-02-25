@@ -1,0 +1,14 @@
+dataset:
+  path: DS/datasets/vodan37_yolo-helmethead
+  data_yaml: data.yaml   # relative to dataset.path
+
+train:
+  model: yolo26s.pt
+  imgsz: 1024
+  epochs: 30
+  batch: 20
+  device: 0
+  close_mosaic: 10
+  project: DS/runs/train
+  name: helmet_yolo26s_exp3_1024
+  exist_ok: true

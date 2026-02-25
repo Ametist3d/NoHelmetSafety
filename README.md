@@ -45,26 +45,59 @@ If you want GPU inference, install a CUDA‑compatible PyTorch build.
 
 ---
 
-## Training
+------------------------------------------------------------------------
+# 📦 Dataset Download
 
-### PowerShell example
+We use Kaggle datasets via `kagglehub`.
 
-```powershell
-$MODEL = "yolo11n.pt"
-$DATA  = "DS/pps.yaml"
-$NAME  = "helmet_exp1"
+Install dependency:
 
-yolo detect train `
-  model=$MODEL `
-  data=$DATA `
-  imgsz=1280 `
-  epochs=30 `
-  device=0 `
-  batch=96 `
-  name=$NAME `
-  project="DS/runs/train" `
-  exist_ok=True
+    pip install kagglehub
+
+Download dataset:
+
+    python dataset_download.py --ds vodan37/yolo-helmethead --out DS/datasets
+
+This will download and copy the dataset into:
+
+    DS/datasets/vodan37_yolo-helmethead/
+
+------------------------------------------------------------------------
+
+# ⚙️ Unified Config (pps.yaml)
+
+Training and dataset configuration are defined in a single YAML file:
+
+``` yaml
+dataset:
+  path: DS/datasets/vodan37_yolo-helmethead
+  data_yaml: data.yaml
+
+train:
+  model: yolo26s.pt
+  imgsz: 1024
+  epochs: 30
+  batch: 20
+  device: 0
+  close_mosaic: 10
+  project: DS/runs/train
+  name: helmet_yolo26s_exp3_1024
+  exist_ok: true
 ```
+
+------------------------------------------------------------------------
+
+# 🏋️ Training
+
+Run:
+
+    python train.py --config pps.yaml
+
+Training outputs will be saved to:
+
+    DS/runs/train/<experiment_name>/
+
+------------------------------------------------------------------------
 
 ---
 

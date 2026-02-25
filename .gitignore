@@ -36,6 +36,7 @@ DS/
 datasets/
 runs/
 */runs/
+/_bckp
 !weights/
 
 # Ultralytics cache
