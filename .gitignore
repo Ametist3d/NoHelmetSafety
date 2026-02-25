@@ -1,0 +1,83 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+*.egg
+build/
+dist/
+
+# Virtual environment
+.venv/
+venv/
+ENV/
+env/
+
+# =========================
+# Models (YOLO weights)
+# =========================
+*.pt
+*.onnx
+*.engine
+*.torchscript
+*.ckpt
+
+# If you want to keep specific small models, comment above and use:
+# !yolo11n.pt
+
+# =========================
+# Datasets & Training Outputs
+# =========================
+DS/
+datasets/
+runs/
+*/runs/
+
+# Ultralytics cache
+*.cache
+*.yaml.cache
+
+# =========================
+# Images & Videos
+# =========================
+test_imgs/
+test_video/
+
+# Common image formats
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.tif
+*.tiff
+
+# Common video formats
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.webm
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# IDE / OS
+# =========================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Mac
+.DS_Store
